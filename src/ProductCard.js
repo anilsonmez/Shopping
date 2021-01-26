@@ -5,7 +5,7 @@ const ProductCard = ({ product, onClickHandler }) => {
     <li>
       <div className="product-name">{product.name}</div>
       <div className="product price">{productPrice} TL</div>
-      <button onClick={onClickHandler}>Add to Cart</button>
+      <button onClick={() => onClickHandler(product)}>Add to Cart</button>
     </li>
   );
 };

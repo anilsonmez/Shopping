@@ -1,12 +1,9 @@
 import ALL_PRODUCTS from "./ALL_PRODUCTS";
 import ProductCard from "./ProductCard";
 
-const Products = () => {
-  function addToCart() {
-    console.log("here");
-  }
+const Products = ({ addToCart }) => {
   return (
-    <div className="products">
+    <ul className="products">
       {ALL_PRODUCTS.map((product) => (
         <ProductCard
           product={product}
@@ -14,7 +11,7 @@ const Products = () => {
           key={product.id}
         />
       ))}
-    </div>
+    </ul>
   );
 };
 export default Products;
