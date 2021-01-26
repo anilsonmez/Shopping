@@ -13,8 +13,7 @@ function App() {
     } else {
       product.quantity++;
     }
-    console.log(product);
-    setTotalPrice(totalPrice + product.price);
+    setTotalPrice(((100 * totalPrice + 100 * product.price) / 100).toFixed(2));
     setCartItems([
       ...cartItems.filter((item) => item.id !== product.id),
       product,
@@ -22,19 +21,38 @@ function App() {
   }
 
   function discardItem(product) {
+    setTotalPrice(
+      (
+        (100 * totalPrice - 100 * product.price * product.quantity) /
+        100
+      ).toFixed(2)
+    );
     setCartItems([...cartItems.filter((item) => item.id !== product.id)]);
-    setTotalPrice(totalPrice - product.price * product.quantity);
     product.quantity = 0;
+  }
+
+  function incrementQuantity(product) {
+    product.quantity++;
+    setTotalPrice(((100 * totalPrice + 100 * product.price) / 100).toFixed(2));
+    setCartItems([...cartItems]);
+  }
+
+  function decrementQuantity(product) {
+    product.quantity--;
+    setTotalPrice(((100 * totalPrice - 100 * product.price) / 100).toFixed(2));
+    setCartItems([...cartItems.filter((item) => item.quantity)]);
   }
 
   return (
     <div className="App">
+      <Products addToCart={addToCart} />
       <ShoppingCart
         totalPrice={totalPrice}
         cartItems={cartItems}
         discardItem={discardItem}
+        incrementQuantity={incrementQuantity}
+        decrementQuantity={decrementQuantity}
       />
-      <Products addToCart={addToCart} />
     </div>
   );
 }
