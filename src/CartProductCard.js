@@ -8,7 +8,7 @@ const CartProductCard = ({
   return (
     <li>
       <div className="cart-product-name">{product.name}</div>
-      <div className="cart-product price">{productPrice} TL</div>
+      <div className="cart-product-price">{productPrice} TL</div>
       <div className="cart-product-quantity">
         <button
           className="decrement"

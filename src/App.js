@@ -6,6 +6,7 @@ import "./App.css";
 function App() {
   const [totalPrice, setTotalPrice] = useState(0);
   const [cartItems, setCartItems] = useState([]);
+  const [cartDisplay, setCartDisplay] = useState("none");
 
   function addToCart(product) {
     if (!product.quantity) {
@@ -52,6 +53,8 @@ function App() {
         discardItem={discardItem}
         incrementQuantity={incrementQuantity}
         decrementQuantity={decrementQuantity}
+        setCartDisplay={setCartDisplay}
+        cartDisplay={cartDisplay}
       />
     </div>
   );

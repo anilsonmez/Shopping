@@ -1,38 +1,159 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
+  background-color: #f21d44;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+header {
+  background-color: #1e2d59;
+  color: #f21d44;
+  min-width: -webkit-fill-available;
+  font-size: 30px;
+  text-align: center;
+  padding: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.App {
+  background-color: #1e2d59;
+  display: flex;
+  flex-flow: column-reverse nowrap;
+  align-items: center;
+}
+
+.App .products {
+  background-color: #f2a516;
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0;
+}
+
+.App .shopping-cart {
+  background-color: #f2a516;
+  color: #1e2d59;
+  border-radius: 0 0 1rem 1rem;
+  min-width: -webkit-fill-available;
+  list-style: none;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  padding: 0;
+}
+
+.App .products li {
+  background-color: #1bbfaf;
+  color: #1e2d59;
+  border-radius: 1rem;
+  flex: 0 0 46%;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  margin: 2%;
+}
+
+.App .products li button {
+  background-color: #1e2d59;
+  color: #f21d44;
+  border: none;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.App .products li button:hover {
+  background-color: #f21d44;
+  color: #1e2d59;
+}
+
+.App .products li button:focus {
+  outline: none;
+}
+
+.App .shopping-cart button.shopping-cart-dropdown {
+  background-color: #1bbfaf;
+  color: #1e2d59;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.App .shopping-cart button.shopping-cart-dropdown:hover {
+  background-color: #f21d44;
+  color: #1e2d59;
+}
+
+.App .shopping-cart button.shopping-cart-dropdown:focus {
+  outline: none;
+}
+
+.App .shopping-cart .cart-content {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.App .shopping-cart .cart-content li {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: start;
+  padding: 0.2rem;
+}
+
+.App .shopping-cart .cart-content li .cart-product-name {
+  flex: 16;
+  margin: 0 2%;
+}
+
+.App .shopping-cart .cart-content li .cart-product-price {
+  flex: 8;
+}
+
+.App .shopping-cart .cart-content li .cart-product-quantity {
+  flex: 8;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.App .shopping-cart .cart-content li .cart-product-quantity button {
+  background-color: #1bbfaf;
+  color: #1e2d59;
+  border: none;
+  border-radius: 0.3rem;
+}
+
+.App .shopping-cart .cart-content li .cart-product-quantity button:hover {
+  background-color: #1e2d59;
+  color: #1bbfaf;
+}
+
+.App .shopping-cart .cart-content li button.discard-item {
+  background-color: #f21d44;
+  color: #1e2d59;
+  border: none;
+  border-radius: 0.3rem;
+  flex: 1;
+  margin: 0 2%;
+}
+
+.App .shopping-cart .cart-content li button.discard-item:hover {
+  background-color: #1e2d59;
+  color: #f21d44;
+}
+
+@media screen and (min-width: 600px) {
+  .App .products li {
+    flex: 0 0 28%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (min-width: 900px) {
+  .App .products li {
+    flex: 0 0 21%;
   }
 }

@@ -6,11 +6,12 @@ const ShoppingCart = ({
   discardItem,
   incrementQuantity,
   decrementQuantity,
+  setCartDisplay,
+  cartDisplay,
 }) => {
   return (
     <div className="shopping-cart">
-      <div className="total-price">{totalPrice}</div>
-      <div className="cart-content">
+      <div className="cart-content" style={{ display: cartDisplay }}>
         {cartItems.map((product) => (
           <CartProductCard
             product={product}
@@ -21,6 +22,20 @@ const ShoppingCart = ({
           />
         ))}
       </div>
+      <button
+        className="shopping-cart-dropdown"
+        onClick={() =>
+          setCartDisplay(() => {
+            if (cartDisplay === "none") {
+              return "block";
+            } else {
+              return "none";
+            }
+          })
+        }
+      >
+        Total: {totalPrice}
+      </button>
     </div>
   );
 };
