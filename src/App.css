@@ -100,7 +100,7 @@ header {
 .App .shopping-cart .cart-content li {
   display: flex;
   flex-flow: row nowrap;
-  align-items: start;
+  align-items: flex-start;
   padding: 0.2rem;
 }
 

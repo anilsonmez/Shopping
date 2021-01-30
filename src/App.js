@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Products from "./Products";
 import ShoppingCart from "./ShoppingCart";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function App() {
